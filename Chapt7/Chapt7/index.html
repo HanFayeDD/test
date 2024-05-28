@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>集合与策略、迭代器模式 - My Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapt10</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Chapt10/Chapt10/" class="dropdown-item">多线程</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapt11</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Chapt11/Chapt10/" class="dropdown-item">Chapt10</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapt12</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Chapt12/Chapt12/" class="dropdown-item">第12章</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapt5</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Chapt5/Chapt5/" class="dropdown-item">设计模式导论</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapt6</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Chapt6/Chapt6/" class="dropdown-item">软件测试及代码质量保障</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapt7</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">集合与策略、迭代器模式</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapt8</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Assets</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Chapt8/assets/Chapt8/" class="dropdown-item">流与输入输出</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapt9</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Chapt9/Chapt9/" class="dropdown-item">Swing图形用户界面</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../Chapt6/Chapt6/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../Chapt8/assets/Chapt8/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">集合与策略、迭代器模式</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">集合</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#list" class="nav-link">List接口及其标准实现</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#set" class="nav-link">Set集合</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#map" class="nav-link">Map集合</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_10" class="nav-link">策略模式</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_17" class="nav-link">迭代器模式</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">集合与策略、迭代器模式</h1>
+<h2 id="_2">集合</h2>
+<p><img src='/第七章/assets/fig1.png'></p>
+<h2 id="list">List接口及其标准实现</h2>
+<h4 id="arraylist">ArrayList</h4>
+<h6 id="_3">类的继承实现图</h6>
+<p><img src='/第七章/assets/fig2.png'></p>
+<h6 id="arraylist_1">ArrayList使用</h6>
+<pre><code class="language-java">import java.util.ArrayList;
+ArrayList&lt;E&gt; sites = new ArrayList&lt;E&gt;();
+//相关方法的使用
+sites.add(1,element)
+sites.add(element)
+sites.remove(index)
+sites.set(index,newelement)
+sites.get(index)
+sites.size()
+//for each迭代元素
+for(typeofel i : sites){
+    ......
+}
+</code></pre>
+<h4 id="linkedlist">LinkedList类</h4>
+<p>类似链表</p>
+<h6 id="_4">两个内容</h6>
+<ul>
+<li>当前节点的值</li>
+<li>指向下一个节点的链接</li>
+</ul>
+<h6 id="_5">特点</h6>
+<ul>
+<li>增加和删除的操作效率高</li>
+<li>查找和修改的操作效率低</li>
+</ul>
+<h6 id="linklist">LinkList的使用</h6>
+<pre><code class="language-java">sites.add(element)
+sites.addFirst(element)
+sites.add(index,element)
+sites.addLast(element)
+sites.removeFirst()
+sites.removeLast()
+sites.getFirst()
+sites.getLast()
+sites.get(i)
+</code></pre>
+<p><strong>ArrayList与LinkList的选取</strong>
+- 前者：
+  + 频繁访问列表中的某一个元素
+  + 只需要在<strong>列表末尾</strong>进行添加和删除元素操作
+- 后者：
+  + 需要频繁的在列表开头、中间或者指定位置进行添加和删除元素操作</p>
+<blockquote>
+<p>注意：
+在列表中间增添元素的时候，LinkList不一定一直比ArrayList快
+指针的移动需要时间$VS$移动数组元素所需要的时间</p>
+</blockquote>
+<h2 id="set">Set集合</h2>
+<ul>
+<li>不按照特定的顺序</li>
+<li>不能包含重复元素</li>
+<li>set集合有Set接口和实现该接口的类组成</li>
+<li>Set接口继承了Collection接口</li>
+</ul>
+<h4 id="hashset">HashSet</h4>
+<h6 id="_6">继承关系</h6>
+<pre><code class="language-plantuml">@startuml
+interface Iterable
+interface Collection
+interface Set
+class HashSet
+Iterable &lt;|-right- Collection
+Collection &lt;|-- Set
+Set &lt;|.left. HashSet
+@enduml
+</code></pre>
+<h6 id="_7">使用</h6>
+<p>装载对象只能是引用数据类型</p>
+<pre><code class="language-java">sites.add(element)//重复的元素不会被添加
+sites.contains(element)
+sites.remove(element)//成功返回true否则false
+sites.clear()
+sites.size()
+</code></pre>
+<h6 id="code">code</h6>
+<pre><code class="language-java">var sites = new HashSet&lt;String&gt;();
+sites.add(&quot;hanhan&quot;);
+boolean flag = sites.remove(&quot;pp&quot;);
+System.out.println(flag);//show:flase
+</code></pre>
+<h2 id="map">Map集合</h2>
+<h4 id="_8">介绍</h4>
+<ul>
+<li>散列表</li>
+<li><strong>最多允许一条记录的键为null</strong></li>
+<li>不支持线程同步</li>
+</ul>
+<h4 id="_9">相关方法</h4>
+<pre><code class="language-java">sites.put()
+sites.containsKey()
+sites.containsValue()
+sites.get()
+sites.keySet()
+sites.values()
+sites.remove(key)
+sites.clear()
+sites.size()
+</code></pre>
+<h2 id="_10">策略模式</h2>
+<h4 id="_11">应用场景:</h4>
+<p>多种算法相似的情况，策略模式允许策略随着对象改变而改变</p>
+<h4 id="_12">三个角色</h4>
+<ul>
+<li>抽象策略：接口或抽象类</li>
+<li>具体策略：具体的实现</li>
+<li>环境角色：持有一个抽象策略的引用<blockquote>
+<p>策略模式并不决定在何时使用何种萨算法，在什么情况下使用什么算法是由客户端决定的</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="_13">特点</h4>
+<ul>
+<li>各策略算法的平等性$\rightarrow$实现各算法之间可以相互替代，所有的算法在实现上也是相互独立的，相互之间是没有依赖的</li>
+<li>运行时的唯一性</li>
+<li>公有的行为：可以提取一个共有行为放到strategy抽象类中（注意这里不能用接口）</li>
+</ul>
+<h4 id="_14">优缺点</h4>
+<h6 id="_15">优点</h6>
+<ul>
+<li>既有继承的优点（代码复用），也比继承更为灵活（算法独立，可以进行拓展）</li>
+<li>选取哪一种算法的逻辑与算法本身逻辑分离，避免使用多个条件转移语句，使系统更为灵活，便于拓展</li>
+<li>高内聚，低耦合</li>
+</ul>
+<h6 id="_16">缺点</h6>
+<ul>
+<li>客户端需要知道算法或者行为的情况（即策略类都会对外暴露）</li>
+<li>策略较多的时候，对象的数目也会很多
+<img src='/第七章/assets/fig3.png'></li>
+</ul>
+<h2 id="_17">迭代器模式</h2>
+<h4 id="_18">三个基本操作</h4>
+<ul>
+<li>next()</li>
+<li>hasNext()</li>
+<li>remove()<strong>可以在遍历中删除返回的元素</strong></li>
+</ul>
+<h4 id="usage">usage</h4>
+<pre><code class="language-java">ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;()
+Iterator&lt;Integer&gt; it = numbers.iterator()
+</code></pre>
+<blockquote>
+<p>将数据结构的遍历行为与遍历对象分离，无需关注遍历对象是如何组织底层结构的</p>
+</blockquote>
+<h4 id="_19">优缺点</h4></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
